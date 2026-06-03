@@ -16,7 +16,7 @@ ________________________________________________________________________________
 
 ### 🚀 How It Works
 
-Check out the demo on YouTube: **[Link do Twojego filmu StoryAI_YT_2.mov]**
+Check out the demo on YouTube: **(https://youtu.be/E6IRLZzmeIM?si=KWXC0IOpsq2g0LXq)**
 
 ### 🛠️ Tech Stack
 
