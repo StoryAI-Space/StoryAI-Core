@@ -1,3 +1,19 @@
+"""
+StoryAI-Core - TRANSCRIPTION ENGINE
+-------------------------------------------
+Description: 
+A high-efficiency transcription tool designed for writers. 
+Utilizes the 'faster-whisper' model (Medium) to convert local audio 
+recordings into text drafts. 
+
+Key Features:
+- Local execution optimized for consumer hardware (Intel Macs).
+- Dynamic file selection menu.
+- VAD (Voice Activity Detection) for silence removal.
+- Standardized text output for creative writing workflows.
+"""
+
+
 import os
 import sys
 import asyncio
@@ -74,8 +90,8 @@ async def main_menu():
         print(f"{i}. {file}")
     
     try:
-        wybor = int(input("\nSelect recording number: ")) - 1
-        audio_file = os.path.join(audio_folder, files[wybor])
+        choice = int(input("\nSelect recording number: ")) - 1
+        audio_file = os.path.join(audio_folder, files[choice])
     except (ValueError, IndexError):
         print("❌ Invalid selection.")
         return
@@ -105,9 +121,9 @@ async def main_menu():
         return
 
     # --- START TRANSCRIPTION ---
-    result_text = transcribe_audio(audio_file)
+    transcription_result = transcribe_audio(audio_file)
     
-    if result_text:
+    if transcription_result:
         with open(file_path, "a", encoding="utf-8") as f:
             f.write("\n\n" + result_text)
         print(f"\n✅ Done! Text appended to: {os.path.basename(file_path)}")
